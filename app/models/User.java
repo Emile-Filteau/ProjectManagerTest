@@ -15,10 +15,12 @@ public class User extends Model {
 	};
 	
 	public String name;
+	public String password;
 	public UserRole role;
 	
-	public User(String name, UserRole role) {
+	public User(String name, String password, UserRole role) {
 		this.name = name;
+		this.password = password;
 		this.role = role;
 	}
 	

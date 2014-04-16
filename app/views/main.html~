@@ -19,7 +19,7 @@
 			<li class="btn"><a href="@{Application.index}">Home</a></li>
 			#{if session.get("username")}
 				<li class="btn"><a href="@{Application.projects}">Projects</a></li>
-				<li class="btn"><a href="@{Application.logout}">Logout</a></li>
+				<li class="btn"><a href="@{Application.projects}">Logout</a></li>
 			#{/if}			
 			#{else}
 				<li class="btn"><a href="@{Application.login}">Login</a></li>

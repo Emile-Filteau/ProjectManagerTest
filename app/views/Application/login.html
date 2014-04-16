@@ -6,11 +6,11 @@
 
 #{form @Application.authenticate()}
  
-    #{ifErrors}
+    #{if isError}
         <p class="error">
-            All fields are required!
+            *All fields are required!
         </p>
-    #{/ifErrors}
+    #{/if}
  
     <input type="text" placeholder="Username" name="username" class="form-control textfield" value="" />
     <input type="password" placeholder="Password" name="password" class="form-control textfield"/>
