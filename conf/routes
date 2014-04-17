@@ -5,6 +5,12 @@
 # Home page
 GET     /                                       Public.index
 
+GET		/public									Public.index
+GET		/public/								Public.index
+
+GET		/personal								Personal.index
+GET		/personal/								Personal.index
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 

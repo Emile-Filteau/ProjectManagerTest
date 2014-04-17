@@ -47,7 +47,7 @@ public class Public extends Controller {
     			render(error);
     		}
     	} else {
-    		login();
+    		render();
     	}
     }
     
@@ -63,7 +63,7 @@ public class Public extends Controller {
     			render(error);
     		}
     	} else {
-    		register();
+    		render();
     	}
     }
     
