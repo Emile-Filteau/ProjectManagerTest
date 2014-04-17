@@ -9,7 +9,6 @@ Feel free to fork the project
 Take note that the project have been eclipsify so you can simply import it in Eclipe.
 
 TODO : 
-- Register
 - Show a project's info
 - Create tasks for projects
 - Add members to projects

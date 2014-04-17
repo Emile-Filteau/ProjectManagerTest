@@ -53,6 +53,8 @@
 	border:1px solid black;
 	border-radius:10px;
 	margin-bottom:20px;
+
+	min-height:75px;
 }
 
 .project-container .project-header {
@@ -76,6 +78,6 @@
 	height:100%;
 }
 
-.project-container > :last-child {
+.project-container > .project-row:last-child {
 	border:0;
 }

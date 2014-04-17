@@ -21,14 +21,6 @@ public class Public extends Controller {
         render();
     }
     
-    public static void login() {
-    	render();
-    }
-    
-    public static void register() {
-    	render();
-    }
-    
     public static void login(String username, String password) {
     	String error = "";
     	if(username != null && password != null) {
@@ -52,12 +44,19 @@ public class Public extends Controller {
     }
     
     public static void register(String username, String password) {
+    	System.out.println("REGISTER");
     	String error = "";
     	if(username != null && password != null) {
     		if(!username.equals("") && !password.equals("")) {
-    			
-    			//Registration Logic
-            	
+    			User u = User.find("name = ?", username).first();
+            	if(u == null) {
+            		User newUser = new User(username, password);
+            		newUser.save();
+            		login(username, password);
+            	} else {
+            		error = "Username already taken";
+            		render(error);
+            	}
     		} else {
     			error = "All fields are required";
     			render(error);
@@ -68,13 +67,13 @@ public class Public extends Controller {
     }
     
     public static void generatedata() {
-    	User user = new User("Jesus", "123", User.UserRole.boss);
+    	User user = new User("Jesus", "123");
     	user.save();
     	
-    	user = new User("John", "123", User.UserRole.developer);
+    	user = new User("John", "123");
     	user.save();
     	
-    	user = new User("Bob", "123", User.UserRole.developer);
+    	user = new User("Bob", "123");
     	user.save();
     	
     	Project pj = new Project("PrototypeJetableWeb", user);

@@ -14,7 +14,7 @@ public class Personal extends Controller {
 	@Before
     static void checkAuthentification() {
         if(session.get("user") == null)
-        	Public.login();
+        	Public.login(null, null);
     }
 	
     public static void index() {

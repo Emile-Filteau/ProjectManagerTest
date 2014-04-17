@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <title>#{get 'title' /}</title>
         <meta charset="${_response_encoding}">
-	<link rel="stylesheet" media="screen" href="@{'/resource/stylesheets/bootstrap.min.css'}">
+		<link rel="stylesheet" media="screen" href="@{'/resource/stylesheets/bootstrap.min.css'}">
         <link rel="stylesheet" media="screen" href="@{'/resource/stylesheets/main.css'}">
         #{get 'moreStyles' /}
         <link rel="shortcut icon" type="image/png" href="@{'/resource/images/favicon.png'}">
@@ -15,7 +14,6 @@
 		<div class="topbar drop-shadow">
 			<h1>ProjectManager</h1>
 			<ul>
-				<!--<li>${session.get("username")}</li>-->
 				#{if session.get("user")}
 					<li class="btn"><a href="@{Personal.index}">Home</a></li>
 					<li class="btn"><a href="@{Personal.projects}">Projects</a></li>
@@ -24,6 +22,7 @@
 				#{else}
 					<li class="btn"><a href="@{Public.index}">Home</a></li>
 					<li class="btn"><a href="@{Public.login}">Login</a></li>
+					<li class="btn"><a href="@{Public.register}">Register</a></li>
 				#{/else}
 			</ul>
 			<div class="clear"></div>
