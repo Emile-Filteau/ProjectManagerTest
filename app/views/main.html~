@@ -28,7 +28,7 @@
 			</ul>
 			<div class="clear"></div>
 		</div>
-		<div class="page-content">
+		<div class="">
 		    	#{doLayout /}
 		</div>
     </body>

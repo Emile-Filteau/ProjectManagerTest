@@ -19,35 +19,15 @@ public class Project extends Model {
 	public String name;
 	public ProjectStatus status;
 	
-	@ManyToMany
-	public List<User> members;
+	@ManyToOne
+	public User owner;
 	
-	public Project(String name) {
+	@ManyToMany
+	public List<User> partners;
+	
+	public Project(String name, User owner) {
 		this.name = name;
+		this.owner = owner;
 		this.status = ProjectStatus.created;
 	}
 }
-/**
-package models;
- 
-import java.util.*;
-import javax.persistence.*;
- 
-import play.db.jpa.*;
- 
-@Entity
-public class User extends Model {
- 
-    public String email;
-    public String password;
-    public String fullname;
-    public boolean isAdmin;
-    
-    public User(String email, String password, String fullname) {
-        this.email = email;
-        this.password = password;
-        this.fullname = fullname;
-    }
- 
-}
-*/

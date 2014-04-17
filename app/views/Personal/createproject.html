@@ -1,0 +1,11 @@
+#{extends 'main.html' /}
+#{set title:'Projects' /}
+
+<h2>Create Projects</h2>
+
+#{form @Personal.createproject()}
+
+<input type="text" class="form-control textfield" name="projectname" placeholder="Project Name"/>
+<input type="submit" class="btn btn-default" value="Create" />
+
+#{/form}
