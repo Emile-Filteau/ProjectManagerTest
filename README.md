@@ -9,10 +9,8 @@ Feel free to fork the project
 Take note that the project have been eclipsify so you can simply import it in Eclipe.
 
 TODO : 
-- Project creation
-- List a user's projects
+- Register
 - Show a project's info
-- Use Security to store connected user
 - Create tasks for projects
 - Add members to projects
 - Assign tasks to project members
