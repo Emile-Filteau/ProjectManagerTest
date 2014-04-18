@@ -9,7 +9,7 @@ Feel free to fork the project
 Take note that the project have been eclipsify so you can simply import it in Eclipe.
 
 TODO : 
-- Show a project's info
+- Show a project's details (Add details to projects)
 - Create tasks for projects
 - Add members to projects
 - Assign tasks to project members
