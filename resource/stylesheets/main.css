@@ -2,6 +2,11 @@
 	clear:both;
 }
 
+
+textarea { 
+    resize: none; 
+}
+
 .drop-shadow {
 	box-shadow: 0 1px 3px rgba(0,0,0,.25);
 }
@@ -48,6 +53,12 @@
 	margin-bottom:10px;
 }
 
+.textarea {
+	width:400px;
+	min-height:100px;
+	margin-bottom:10px;
+}
+
 .project-container {
 	width:400px;
 	border:1px solid black;
@@ -80,4 +91,21 @@
 
 .project-container > .project-row:last-child {
 	border:0;
+}
+
+.back-arrow {
+	display:block;
+	background-image:url('../images/back-arrow.png');
+	width:50px;
+	height:50px;
+	float:left;
+}
+
+.project-title h2 {
+	padding:10px;
+	padding-left:60px;
+}
+
+.project-status {
+	font-style:italic;	
 }

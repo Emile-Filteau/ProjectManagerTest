@@ -6,7 +6,7 @@
 <div class="project-container">
 	<div class="project-header drop-shadow">My Projects</div>
 	#{list items:projects, as:'project'}
-		<div class="project-row"><a href="@{Personal.projects}">${project.name}</a></div>
+		<div class="project-row"><a href="@{Personal.project(project.id)}">${project.name}</a></div>
 	#{/list}
 </div>
 

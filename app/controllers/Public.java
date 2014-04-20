@@ -44,7 +44,6 @@ public class Public extends Controller {
     }
     
     public static void register(String username, String password) {
-    	System.out.println("REGISTER");
     	String error = "";
     	if(username != null && password != null) {
     		if(!username.equals("") && !password.equals("")) {
@@ -76,10 +75,10 @@ public class Public extends Controller {
     	user = new User("Bob", "123");
     	user.save();
     	
-    	Project pj = new Project("PrototypeJetableWeb", user);
+    	Project pj = new Project("PrototypeJetableWeb", "aaaaa",user);
     	pj.save();
     	
-    	pj = new Project("Integra", user);
+    	pj = new Project("Integra", "aaaaa", user);
     	pj.save();
     }
 

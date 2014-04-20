@@ -36,12 +36,12 @@ public class Personal extends Controller {
     	render(projects);
     }
     
-    public static void createproject(String projectname) {
-    	if(projectname != null) {
+    public static void createproject(String projectname, String projectdescription) {
+    	if(projectname != null && projectdescription != null) {
     		Long id = Long.parseLong(Session.current().get("user_id"));
         	User u = User.findById(id);
         	
-    		Project p = new Project(projectname, u);
+    		Project p = new Project(projectname, projectdescription, u);
     		p.save();
     		
     		projects();
@@ -50,4 +50,16 @@ public class Personal extends Controller {
     	}
     }
 
+    public static void project(Long id) {
+    	Project project = Project.findById(id);
+    	
+    	Long UID = Long.parseLong(Session.current().get("user_id"));
+    	User u = User.findById(UID);
+    	
+    	if(project.canBeSeenBy(u)) {
+    		render(project);
+    	} else {
+    		projects();
+    	}
+    }
 }

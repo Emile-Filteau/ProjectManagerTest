@@ -1,0 +1,9 @@
+#{extends 'main.html' /}
+#{set title:'Projects' /}
+
+<div class="project-title">
+	<a class="back-arrow" href="@{Personal.projects}"></a>
+	<h2>Project : ${project.name}</h2>
+</div>
+<p class="project-status">status : ${project.status}</p>
+<p class="project-description">${project.description}</p>

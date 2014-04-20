@@ -8,16 +8,19 @@ import play.db.jpa.*;
 @Entity
 public class Project extends Model {
 	
-	public enum ProjectStatus {
-		created,
-		conception,
-		developement,
-		production,
-		dead
+	public enum Status {
+		active,
+		inactive,
+		completed
 	};
 
 	public String name;
-	public ProjectStatus status;
+	public String description;
+	public Status status;
+	
+	
+	public Date startDate;
+	public Date endDate;
 	
 	@ManyToOne
 	public User owner;
@@ -25,9 +28,32 @@ public class Project extends Model {
 	@ManyToMany
 	public List<User> partners;
 	
-	public Project(String name, User owner) {
+	@OneToMany
+	public List<Task> tasks;
+	
+	public Project(String name, String description, User owner) {
 		this.name = name;
+		this.description = description;
 		this.owner = owner;
-		this.status = ProjectStatus.created;
+		this.status = Status.active;
+		this.partners = new ArrayList<User>();
+		
+		this.startDate = new Date();
+	}
+	
+	public boolean canBeSeenBy(User u) {
+		if(owner == u)
+			return true;
+		for(User partner : partners) {
+			if(partner == u) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void completeProject() {
+		this.status = Status.completed;
+		this.endDate = new Date();
 	}
 }
